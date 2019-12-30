@@ -170,6 +170,11 @@ namespace OOP
         {
             return "Child";
         }
+
+        public int GetNumber()
+        {
+            return 100;
+        }
     }
 
     public interface ISomething
