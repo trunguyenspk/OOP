@@ -29,6 +29,8 @@ namespace OOP
 
 
 
+
+
         }
     }
 
@@ -173,5 +175,7 @@ namespace OOP
     public interface ISomething
     {
         string Do();
+
+        int GetNumber();
     }
 }
