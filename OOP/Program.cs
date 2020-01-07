@@ -26,11 +26,6 @@ namespace OOP
 
 
             Console.ReadLine();
-
-
-
-
-
         }
     }
 
@@ -182,5 +177,29 @@ namespace OOP
         string Do();
 
         int GetNumber();
+    }
+
+    public class FlowInstanceId
+    {
+        public string Id { get; set; }
+        public string FlowName { get; set; }
+
+
+        public FlowInstanceId()
+        {
+
+        }
+
+        public FlowInstanceId(string id, string flowName) 
+        {
+            Id = id;
+            FlowName = flowName;
+        }
+
+        //override method
+        public override string ToString()
+        {
+            return $"FlowId: {Id} of Name: {FlowName}";
+        }
     }
 }
