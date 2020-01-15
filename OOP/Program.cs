@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 
 namespace OOP
@@ -24,6 +25,14 @@ namespace OOP
             hv.SetHeight(3);
             var result2 = AreaCalculator.CalculateArea(hv);
 
+
+            using (var ctx = new SchoolContext())
+            {
+                var student = new Student() { StudentName = "Bill" };
+
+                ctx.Students.Add(student);
+                ctx.SaveChanges();
+            }
 
             Console.ReadLine();
         }
