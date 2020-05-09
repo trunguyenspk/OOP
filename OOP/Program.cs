@@ -16,7 +16,7 @@ namespace OOP
         {
             //SchoolContextRun.Init();
 
-            OOPRun.CreateObject();
+            OOPRun.RunApp();
 
             Console.WriteLine("DONE!!!");Console.ReadLine();
         }

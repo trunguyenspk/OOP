@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OOP.EF_CodeFirst
@@ -10,10 +11,15 @@ namespace OOP.EF_CodeFirst
         {
             using (var ctx = new SchoolContext())
             {
-                var student = new Student() { StudentName = "Bill" };
+                //var grades = ctx.Grades.ToList();
                 
-                ctx.Students.Add(student);
-                ctx.SaveChanges();
+                var grades = ctx.Grades.Include("Students").ToList();
+
+                Grade firstGr = grades[0];
+
+                //Loads Student address for particular Student only (seperate SQL query)
+                //var add = firstGr.Students;
+
             }
         }
     }

@@ -6,7 +6,10 @@ namespace OOP
     {
         public SchoolContext() : base("SchoolDBTest")
         {
-            Database.SetInitializer(new SchoolDBInitializer());
+            //Database.SetInitializer(new SchoolDBInitializer());
+
+            //this.Configuration.LazyLoadingEnabled = false;
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -17,6 +17,19 @@ namespace OOP
 
             context.Grades.AddRange(grades);
 
+            IList<Student> stds = new List<Student>();
+
+            stds.Add(new Student() {  StudentName = "StudentName 1", GradeId = 1 });
+            stds.Add(new Student() { StudentName = "StudentName 1", GradeId = 1 });
+            stds.Add(new Student() { StudentName = "StudentName 1", GradeId = 2 });
+            stds.Add(new Student() { StudentName = "StudentName 1", GradeId = 2 });
+
+
+            context.Students.AddRange(stds);
+
+
+
+
             base.Seed(context);
         }
     }

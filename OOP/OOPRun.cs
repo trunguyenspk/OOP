@@ -6,16 +6,15 @@ namespace OOP
 {
     public static class OOPRun
     {
-        public static void CreateObject()
+        public static void RunApp()
         {
-            var sh = new Shape(100, 200);
-
-            var srvar = new StaticReadonlyVar();
-
+            
+         
+            var a = 33;
         }
     }
 
-    class Shape
+    public class Shape
     {
         protected int width, height;
 
@@ -35,6 +34,7 @@ namespace OOP
     {
         public Rectangle(int a = 0, int b = 0) : base(a, b)
         {
+
         }
         public override int area()
         {
@@ -45,35 +45,19 @@ namespace OOP
 
     abstract class ShapeAbstract
     {
-        public abstract int NotImplementMethod();
+        public abstract string NotImplementMethod();
 
-        public int ImplementedMethod()
+        public string ImplementedMethod()
         {
-            return 100;
+            return "ImplementedMethod";
         }
     }
 
     class AbstractInherit : ShapeAbstract
     {
-        public override int NotImplementMethod()
+        public override string NotImplementMethod()
         {
-            return 200;
-        }
-    }
-
-    public class Apple
-    {
-        public virtual string GetColor()
-        {
-            return "Red";
-        }
-    }
-
-    public class Orange : Apple
-    {
-        public override string GetColor()
-        {
-            return "Orange";
+            return "NotImplementMethod Is Overrided";
         }
     }
 
@@ -140,6 +124,13 @@ namespace OOP
         }
     }
 
+    public interface ISomething
+    {
+        string Do();
+
+        int GetNumber();
+    }
+
     public class ChildClass : ParentClass, ISomething
     {
         public new string Do()
@@ -157,14 +148,7 @@ namespace OOP
             return 100;
         }
     }
-
-    public interface ISomething
-    {
-        string Do();
-
-        int GetNumber();
-    }
-
+    
     public class FlowInstanceId
     {
         public string Id { get; set; }
