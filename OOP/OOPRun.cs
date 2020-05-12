@@ -6,11 +6,15 @@ namespace OOP
 {
     public static class OOPRun
     {
-        public static void RunApp()
+        public static void Run()
         {
-            
-         
-            var a = 33;
+            var cl = new PolyConcrete();
+
+            var a = cl.AbstractMethodWithoutBody();
+
+            var b = cl.VirtualFunction();
+
+            var breakdebug = 0;
         }
     }
 
@@ -148,7 +152,7 @@ namespace OOP
             return 100;
         }
     }
-    
+
     public class FlowInstanceId
     {
         public string Id { get; set; }
@@ -222,4 +226,39 @@ namespace OOP
             Console.ReadKey();
         }
     }
+
+    public abstract class Polymorphism
+    {
+        //STATIC POLYMORPHISM - FUNCTION OVERLOADING
+        public string Print(int i)
+        {
+            return $"Return INT value:" + i;
+        }
+        public string Print(double f)
+        {
+            return $"Return INT double:" + f;
+        }
+
+        //DYNAMIC POLYMORPHISM
+        public abstract string AbstractMethodWithoutBody();
+
+        public virtual string VirtualFunction()
+        {
+            return "RETURN FROM VIRTUALFUNCTION";
+        }
+    }
+
+    public class PolyConcrete : Polymorphism
+    {
+        public override string AbstractMethodWithoutBody()
+        {
+            return "RETURN ABSTRACTMETHODWITHOUTBODY IN CONCRETE CLASS";
+        }
+
+        public override string VirtualFunction()
+        {
+            return "RETURN VIRTUALFUNCTION IN CONCRETE CLASS";
+        }
+    }
+
 }

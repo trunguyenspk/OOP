@@ -12,13 +12,16 @@ namespace OOP
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //SchoolContextRun.Init();
 
-            OOPRun.RunApp();
+            OOPRun.Run();
 
-            Console.WriteLine("DONE!!!");Console.ReadLine();
+            DesignPattern.Run();
+
+            Console.WriteLine("DONE");
+            Console.ReadLine();
         }
     }
 }
