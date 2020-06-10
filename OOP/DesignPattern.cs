@@ -8,17 +8,25 @@ namespace OOP
     {
         public static void Run()
         {
-            var color = new Color(100, 200, 300);
+            //var color = new Color(100, 200, 300);
+            //var shallowColor = color.Clone();
 
-            var shallowColor = color.Clone();
+            IShape circle = new DCircle();
 
-            var breakdebug = 0;
+            Console.WriteLine("Cricle with normal");
+            circle.Draw();
+
+            var redRectangle = new RedShapeDecorator(new DRectangle());
+
+            Console.WriteLine("redRectangle");
+            redRectangle.Draw();
+
+            var _debug = 0;
         }
     }
 
 
-    //Prototype
-    //Create new objects by copying prototypical instance
+    #region //PROTOTYPE - CREATE NEW OBJECTS BY COPYING PROTOTYPICAL INSTANCE
     abstract class ColorPrototype
     {
         public abstract ColorPrototype Clone();
@@ -46,5 +54,60 @@ namespace OOP
             return this.MemberwiseClone() as ColorPrototype;
         }
     }
+    #endregion
 
+
+    #region //DECORATOR
+    //add new functionality to an existing object without altering its structure. 
+    //This type of design pattern comes under structural pattern as this pattern acts as a wrapper to existing class.
+
+    public interface IShape
+    {
+        void Draw();
+    }
+
+    public class DRectangle : IShape
+    {
+        public void Draw()
+        {
+            Console.WriteLine("Draw Rectangle");
+        }
+    }
+    public class DCircle : IShape
+    {
+        public void Draw()
+        {
+            Console.WriteLine("Draw Circle");
+        }
+    }
+    public abstract class ShapeDecorator : IShape
+    {
+        protected IShape _decoratedShape;
+
+        public ShapeDecorator(IShape decoratedShape)
+        {
+            _decoratedShape = decoratedShape;
+        }
+        public void Draw()
+        {
+            _decoratedShape.Draw();
+        }
+    }
+    public class RedShapeDecorator : ShapeDecorator
+    {
+        public RedShapeDecorator(IShape decoratedShape) : base(decoratedShape)
+        {
+
+        }
+        public void Draw()
+        {
+            base.Draw();
+            SetRedBorder(_decoratedShape);
+        }
+        private void SetRedBorder(IShape decoratedShape)
+        {
+            Console.WriteLine("Border Color: Red");
+        }
+    } 
+    #endregion
 }

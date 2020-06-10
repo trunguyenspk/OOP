@@ -21,6 +21,7 @@ namespace OOP
             DesignPattern.Run();
 
             Console.WriteLine("DONE");
+
             Console.ReadLine();
         }
     }
