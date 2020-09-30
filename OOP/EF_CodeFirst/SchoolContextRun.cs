@@ -7,7 +7,7 @@ namespace OOP.EF_CodeFirst
 {
     public static class SchoolContextRun
     {
-        public static void Init()
+        public static void Run()
         {
             using (var ctx = new SchoolContext())
             {
