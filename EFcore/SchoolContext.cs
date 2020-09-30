@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EFcore
@@ -37,9 +38,14 @@ namespace EFcore
     public class Student
     {
         public int StudentId { get; set; }
-        public string Name { get; set; }
-        
+        public string StudentName { get; set; }
+
+        public int GradeId_FK { get; set; }
+        [ForeignKey("GradeId_FK")] // FK key will take PK = GradeId to make FK on Student 
         public Grade Grade { get; set; }
+
+        //FK key will take GradeId to make FK on Student if only use Principal entity
+        //public Grade Grade { get; set; }
 
         // This ensures that the value of the foreign key column StudentId must be unique in the StudentAddress table, 
         // which is necessary of a one-to-one relationship

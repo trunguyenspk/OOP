@@ -39,17 +39,17 @@ namespace EFcore.Migrations
                     StudentId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
-                    GradeId = table.Column<int>(nullable: true)
+                    GradeId_FK = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Students", x => x.StudentId);
                     table.ForeignKey(
-                        name: "FK_Students_Grades_GradeId",
-                        column: x => x.GradeId,
+                        name: "FK_Students_Grades_GradeId_FK",
+                        column: x => x.GradeId_FK,
                         principalTable: "Grades",
                         principalColumn: "GradeId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -79,9 +79,9 @@ namespace EFcore.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_GradeId",
+                name: "IX_Students_GradeId_FK",
                 table: "Students",
-                column: "GradeId");
+                column: "GradeId_FK");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
