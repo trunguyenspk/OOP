@@ -10,14 +10,13 @@ namespace EFcore
         {
             var context = new SchoolContext();
 
-            var grades = context.Grades.Include(x=>x.Students).ToList();
+            var grades = context.Grades.ToList();
 
             //var students = context.Students.ToList();// .Where(s => s.Name == "aaa");
 
-            //var studentWithGrade = context.Students
-            //                        .Where(s => s.Name == "aaa")
-            //                        .Include(s => s.Grade)
-            //                        .FirstOrDefault();
+            var students = context.Students.FromSqlRaw("GetStudents '1'").ToList();
+
+            var rowsAffected = context.Database.ExecuteSqlRaw("insert into Students(StudentName, GradeId_FK) values('StudentName',1) ;");
 
             Console.ReadLine();
         }
