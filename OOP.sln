@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "OOP\OOP.csproj", "{7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFcore", "EFcore\EFcore.csproj", "{0AB3C401-605A-4296-BD78-593A9AE3C4B4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "di_sample", "di_sample\di_sample\di_sample.csproj", "{2ACD5D8D-EFD3-46C0-A3AF-FF89000E1B7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0AB3C401-605A-4296-BD78-593A9AE3C4B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AB3C401-605A-4296-BD78-593A9AE3C4B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AB3C401-605A-4296-BD78-593A9AE3C4B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ACD5D8D-EFD3-46C0-A3AF-FF89000E1B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ACD5D8D-EFD3-46C0-A3AF-FF89000E1B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ACD5D8D-EFD3-46C0-A3AF-FF89000E1B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ACD5D8D-EFD3-46C0-A3AF-FF89000E1B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
