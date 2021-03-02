@@ -18,25 +18,15 @@ namespace OOP
     {
         public static void Main(string[] args)
         {
-            SchoolContextRun.Run();
+            //SchoolContextRun.Run();
 
             //OOPRun.Run();
 
             //DesignPattern.Run();
 
+            SOLID.SolidRun();
+
             Console.ReadLine();
         }
-
-        public static (int _sum, int _subtract) Cal(int a, int b)
-        {
-            return (a + b, a - b);
-        }
-
-    }
-
-    public class Step
-    {
-        public string Name { get; set; }
-        public int Amount { get; set; }
     }
 }

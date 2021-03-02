@@ -4,11 +4,18 @@ using System.Text;
 
 namespace OOP
 {
-    public class SOLID
+    public static class SOLID
     {
+        public static void SolidRun()
+        {
+            Apple apple = new Orange();
+
+            Console.WriteLine(apple.GetColor());
+        }
     }
 
-    class Customer_NOT_Follow_Open_Close_Principle
+    #region OPEN_CLOSE_PRINCIPLE
+    public class Customer_NOT_Follow_Open_Close_Principle
     {
         private int _CustType;
         public int CustType
@@ -42,13 +49,13 @@ namespace OOP
             return TotalSales;
         }
 
-        public virtual void AddCustomer() 
+        public virtual void AddCustomer()
         {
             Console.WriteLine("ADDED");
         }
     }
 
-    class SilverCustomer : Customer
+    public class SilverCustomer : Customer
     {
         public override double getDiscount(double TotalSales)
         {
@@ -56,14 +63,17 @@ namespace OOP
         }
     }
 
-    class GoldCustomer : Customer
+    public class GoldCustomer : Customer
     {
         public override double getDiscount(double TotalSales)
         {
             return base.getDiscount(TotalSales) - 100;
         }
-    }
+    } 
+    #endregion
 
+    #region liskov-substitution-principle
+    // https://dotnettutorials.net/lesson/liskov-substitution-principle/
     public class Apple
     {
         public virtual string GetColor()
@@ -71,7 +81,6 @@ namespace OOP
             return "Red";
         }
     }
-
     public class Orange : Apple
     {
         public override string GetColor()
@@ -79,9 +88,6 @@ namespace OOP
             return "Orange";
         }
     }
-
-
-    //https://dotnettutorials.net/lesson/liskov-substitution-principle/
     public abstract class Fruit
     {
         public abstract string GetColor();
@@ -93,15 +99,13 @@ namespace OOP
             return "Red";
         }
     }
-    public class TraiCam : Apple
+    public class TraiCam : Fruit
     {
         public override string GetColor()
         {
             return "Orange";
         }
-    }
-
-
-
+    } 
+    #endregion
 
 }
